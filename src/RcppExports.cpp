@@ -15,3 +15,13 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+
+static const R_CallMethodDef CallEntries[] = {
+    {"hua_rcpp_hello", (DL_FUNC) &hua_rcpp_hello, 0},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_hua(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
+}

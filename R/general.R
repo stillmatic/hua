@@ -44,16 +44,4 @@ nan_to_na <- function(x) {
     x
 }
 
-#' Convert numbers with commas in them to numeric
-#'
-#' @param x character or factor
-#'
-#' @return numeric representation of input
-#' @export
-#'
-#' @examples
-#' nums <- c("123,456,789", "313,214.03")
-#' comma_to_numeric(nums)
-comma_to_numeric <- function(x) {
-    as.numeric(gsub(",", "", x))
-}
+
